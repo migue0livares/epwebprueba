@@ -2926,7 +2926,7 @@
                 var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
                 if (maxScroll - targetY < window.innerHeight * 0.9) targetY = maxScroll;
                 targetY = Math.max(0, Math.min(targetY, maxScroll));
-                window.scrollTo(0, targetY);
+                window.scrollTo({ top: targetY, behavior: prefersReduced ? 'auto' : 'smooth' });
             }, false);
         })();
 
